@@ -1,0 +1,76 @@
+{
+  "conversations": {
+    "conv-default": {
+      "id": "conv-default",
+      "name": "Conversa de demonstração",
+      "messages": [
+        {
+          "id": "ca8d1aa9-dd42-43b6-9162-0ec0ce2ac58f",
+          "who": "their",
+          "text": "Bem-vinda ao Mini WhatsApp Web com Flask API!",
+          "ts": "2025-11-27T20:42:32.074960",
+          "status": "delivered"
+        },
+        {
+          "id": "10e847e7-c53b-4f5b-a018-ccd3cbc50727",
+          "who": "mine",
+          "text": "ola",
+          "ts": "2025-11-27T21:32:47.013650",
+          "status": "sending"
+        },
+        {
+          "id": "182dad1a-ce07-415c-946d-59bc61d9f1dd",
+          "who": "mine",
+          "text": "ola",
+          "ts": "2025-11-27T21:41:07.688028",
+          "status": "sending"
+        },
+        {
+          "id": "75447da2-1609-411d-a5c6-663697b59170",
+          "who": "mine",
+          "text": "fale sobre js",
+          "ts": "2025-11-27T21:41:35.714691",
+          "status": "sending"
+        },
+        {
+          "id": "1ae9c440-1564-4e6e-bec7-7de5d4563967",
+          "who": "their",
+          "text": "model: Olá! JavaScript (JS) é uma linguagem de programação de alto nível, essencial para o desenvolvimento web. Aqui estão alguns pontos importantes sobre ele:\n\n*   **Interatividade:** Permite criar páginas web dinâmicas e interativas.\n*   **Front-end:** Usado principalmente para manipular o DOM (Document Object Model) e criar interfaces de usuário ricas.\n*   **Back-end:** Com Node.js, também pode ser usado no lado do servidor.\n*   **Frameworks e bibliotecas:** Possui uma vasta gama de frameworks (React, Angular, Vue) e bibliotecas para facilitar o desenvolvimento.\n*   **Versatilidade:** Usado em desenvolvimento web, mobile (React Native), desktop (Electron) e até em jogos.\n\nSe tiver alguma pergunta específica sobre JavaScript, pode perguntar!\n",
+          "ts": "2025-11-27T21:41:39.952083",
+          "status": "delivered"
+        },
+        {
+          "id": "87249bd9-f870-44f9-897d-7bc466fcfc94",
+          "who": "mine",
+          "text": "fale sobre vue resumindo",
+          "ts": "2025-11-27T22:20:50.103272",
+          "status": "sent"
+        },
+        {
+          "id": "316929f5-b58d-41c7-8f59-3eaf33adbeb6",
+          "who": "their",
+          "text": "model: Vue.js é um framework JavaScript progressivo para construir interfaces de usuário. É leve, fácil de aprender e integrar, e focado na camada de visualização. Ideal para criar Single-Page Applications (SPAs) e interfaces interativas.\n",
+          "ts": "2025-11-27T22:20:53.539808",
+          "status": "delivered"
+        },
+        {
+          "id": "6942b0f3-e4ac-47e5-866f-4803ecfdfafb",
+          "who": "mine",
+          "text": "template vue exemplo",
+          "ts": "2025-11-27T22:22:11.530480",
+          "status": "sent"
+        },
+        {
+          "id": "bceaf227-8ba6-414f-93de-d3a0f36731e4",
+          "who": "their",
+          "text": "model: Ok, aqui está um exemplo básico de um template Vue.js:\n\n```vue\n<template>\n  <div id=\"app\">\n    <h1>{{ mensagem }}</h1>\n    <button @click=\"mudarMensagem\">Clique Aqui</button>\n    <p>Contagem: {{ contagem }}</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      mensagem: 'Olá, Vue!',\n      contagem: 0\n    }\n  },\n  methods: {\n    mudarMensagem() {\n      this.mensagem = 'Mensagem Alterada!';\n      this.contagem++;\n    }\n  }\n}\n</script>\n\n<style scoped>\n#app {\n  font-family: Avenir, Helvetica, Arial, sans-serif;\n  text-align: center;\n  color: #2c3e50;\n  margin-top: 60px;\n}\n</style>\n```\n\n**Explicação:**\n\n*   **`<template>`:** Define a estrutura HTML do componente.\n    *   `{{ mensagem }}`:  Interpola o valor da propriedade `mensagem` do objeto `data`.\n    *   `@click=\"mudarMensagem\"`:  Vincula o evento de clique do botão ao método `mudarMensagem`.\n    *   `{{ contagem }}`: Exibe o valor da propriedade `contagem`.\n*   **`<script>`:** Contém a lógica JavaScript do componente.\n    *   `export default { ... }`: Define o componente Vue.\n    *   `data() { ... }`: Define as propriedades reativas do componente.  A função `data` deve sempre retornar um objeto.\n        *   `mensagem: 'Olá, Vue!'`:  Inicializa a propriedade `mensagem` com o valor \"Olá, Vue!\".\n        *   `contagem: 0`: Inicializa a propriedade `contagem` com o valor 0.\n    *   `methods: { ... }`: Define os métodos do componente.\n        *   `mudarMensagem() { ... }`:  Altera o valor da propriedade `mensagem` e incrementa a propriedade `contagem`.  `this` se refere à instância do componente.\n*   **`<style scoped>`:**  Define os estilos CSS específicos para este componente. O atributo `scoped` garante que os estilos se apliquem apenas aos elementos dentro deste componente.\n\n**Como usar:**\n\n1.  **Crie um arquivo .vue:** Salve o código acima em um arquivo com a extensão `.vue`, por exemplo, `MeuComponente.vue`.\n2.  **Importe e use no seu componente principal:** Em seu componente principal (geralmente `App.vue`), importe e registre o componente:\n\n```vue\n<template>\n  <div id=\"app\">\n    <MeuComponente />\n  </div>\n</template>\n\n<script>\nimport MeuComponente from './components/MeuComponente.vue'\n\nexport default {\n  components: {\n    MeuComponente\n  }\n}\n</script>\n```\n\n**Observações:**\n\n*   Este é um exemplo muito básico.  Componentes Vue podem se tornar muito mais complexos, com propriedades (props), eventos, slots, etc.\n*   Para executar este código, você precisará de um ambiente de desenvolvimento Vue.js, como o Vue CLI.\n*   O `<style scoped>` é opcional, mas recomendado para manter os estilos organizados e evitar conflitos entre componentes.\n\nEspero que este exemplo ajude! Se tiver mais perguntas, pode perguntar.\n",
+          "ts": "2025-11-27T22:22:18.643981",
+          "status": "delivered"
+        }
+      ]
+    }
+  },
+  "currentConvId": "conv-default",
+  "simulateBot": false,
+  "geminiEnabled": true
+}

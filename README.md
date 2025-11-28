@@ -265,7 +265,7 @@ Encontrou um problema ou tem uma sugestão?
 
 1. Verifique os Issues existentes
 2. Crie um novo Issue com detalhes do problema
-3. Para contato direto: seu-email@dominio.com
+3. Para contato direto: innovaideia2023@gmail.com
 
 ---
 

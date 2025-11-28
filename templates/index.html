@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WhatsApp Web — Gemini AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3 6H21" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3 18H21" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <div class="app" id="app">
+        <div class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="logo">AI</div>
+                <div>
+                    <div style="font-weight:700">Gemini WhatsApp</div>
+                    <div class="small">IA Integrada • Flask API</div>
+                </div>
+            </div>
+
+            <div class="search">
+                <input class="search" id="searchConv" placeholder="Buscar conversas..." aria-label="Buscar conversas" />
+            </div>
+
+            <div class="conversations" id="conversations"></div>
+
+            <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+                <button class="btn-ghost" id="newConvBtn">Nova Conversa</button>
+                <button class="btn-ghost" id="refreshBtn">Atualizar</button>
+            </div>
+
+            <div class="footer" style="margin-top:12px">
+                <div style="font-weight:600">Powered by Gemini AI</div>
+                <div><a href="https://innovaideia-github-io.vercel.app" target="_blank">InNovaIdeia Portfolio</a></div>
+            </div>
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-header">
+                <div style="display:flex;flex-direction:column">
+                    <div class="title" id="chatTitle">Conversa com Gemini AI</div>
+                    <div class="small" id="chatSub">
+                        <span id="statusIndicator" class="status-indicator status-online"></span>
+                        <span id="statusText">Online</span>
+                        • Última atividade: --
+                    </div>
+                </div>
+                <div style="flex:1"></div>
+                <div id="geminiIndicator" class="gemini-indicator">🤖 Gemini AI</div>
+                <div id="apiStatus" class="api-status connected">API Conectada</div>
+            </div>
+
+            <div class="messages" id="messages" aria-live="polite">
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    Gemini AI está digitando...
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="controls" style="flex:1">
+                    <div id="editor" class="editor" contenteditable="true" role="textbox" aria-multiline="true" placeholder="Digite sua mensagem... (Ctrl+Enter para enviar)"></div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:6px">
+                    <button id="send">Enviar</button>
+                    <button class="btn-gemini" id="geminiBtn" title="Ativar/Desativar Gemini AI">Gemini AI</button>
+                </div>
+            </div>
+
+            <div class="panel-bottom">
+                <div class="panel" style="flex:1">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                        <div style="font-weight:600">Logs do Sistema</div>
+                        <div class="small">Flask + Gemini AI</div>
+                    </div>
+                    <div id="log" class="log"></div>
+                </div>
+
+                <div class="panel" style="width:260px">
+                    <div style="font-weight:700;margin-bottom:8px">Ferramentas</div>
+                    <label for="cfgDelay" class="small">Delay entre envios (ms)</label>
+                    <input id="cfgDelay" type="number" value="300" min="0" max="5000" aria-label="Delay entre envios em milissegundos" style="width:100%;padding:6px;margin-bottom:6px" />
+                    <label for="cfgInsert" class="small">Delay inserção (ms)</label>
+                    <input id="cfgInsert" type="number" value="150" min="0" max="2000" aria-label="Delay de inserção em milissegundos" style="width:100%;padding:6px;margin-bottom:6px" />
+                    <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+                        <button class="btn-ghost" id="autoBtn">Executar Script</button>
+                        <button class="btn-ghost" id="clearCurrent">Limpar Chat</button>
+                        <button class="btn-danger" id="clearHistory">Limpar Tudo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+  </html>
